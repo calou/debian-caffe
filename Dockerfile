@@ -7,10 +7,10 @@ RUN apt-get update && apt-get install -y \
     libhdf5-dev libleveldb-dev liblmdb-dev libsnappy-dev python python-pip \
     python-numpy python-scipy python-pandas python-matplotlib cython python-six \ 
     python-protobuf python-networkx python-h5py python-skimage-lib gcc g++ make \
-    ipython ca-certificates
+    ipython ca-certificates --no-install-recommends
 
 RUN cd /usr/share && \
-    git clone https://github.com/BVLC/caffe.git && \
+    git clone https://github.com/calou/caffe.git && \
     cd caffe && \
     cp Makefile.config.example Makefile.config && \
     sed -i 's/# CPU_ONLY/CPU_ONLY/g' Makefile.config && \
